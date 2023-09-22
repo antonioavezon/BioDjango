@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'stylesheet.css' %}">
+</head>
+<body>
+  <div class="title-container">
+    <h1>Laboratorio de Microbiología Molecular y Biotecnología Ambiental</h1>
+  </div>
+  <div class="nav-links">
+    <ul>
+      <li><a href="{% url 'aplicaciones' %}">Aplicaciones</a></li>
+      <li><a href="{% url 'sobre_nosotros' %}">Sobre nosotros</a></li>
+    </ul>
+  </div>
+  <div class = "container">
+    <div class="texto">
+      <h3>Nuestra misión :</h3>
+      <p class="parrafo" >
+        Buscando incorporar la Biotecnología en todas las áreas del quehacer científico y tecnológico, el Laboratorio de Microbiología Molecular y Biotecnología Ambiental abrió sus puertas en el año 1998 promoviendo la investigación científica en el campo de la biotecnología ambiental, específicamente en temáticas de biorremediación, área a la que hoy se suman otras líneas de investigación, reafirmando así al Laboratorio MMBA como un referente en el campo de la Biotecnología.
+      </p>
+    </div>
+    <div class="image">
+      <img src="{% static 'laboratorio.jpg' %}" alt="Laboratorio">
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resultado de BLAST</title>
+  <style>
+      table {
+          border-collapse: collapse;
+          width: 100%;
+      }
+      th, td {
+          border: 1px solid black;
+          padding: 8px;
+          text-align: left;
+      }
+      th:nth-child(4) {
+          width: 15%;
+      }
+  </style>
+</head>
+<body>
+  <h1>Resultado de BLAST</h1>
+  <a href="{% url 'aplicaciones' %}"><button>Volver a Aplicaciones</button></a>
+  <table>
+      <tr>
+          <th>Título</th>
+          <th>Longitud</th>
+          <th>Puntaje</th>
+          <th>E-valor</th>
+          <th>ID</th>
+      </tr>
+      {% for alignment in alignments %}
+      <tr>
+          <td>{{ alignment.title }}</td>
+          <td>{{ alignment.length }}</td>
+          <td>{{ alignment.score }}</td>
+          <td>{{ alignment.e_value }}</td>
+          <td>
+            {% if "pdb|" in alignment.title %}
+                <a href="https://www.rcsb.org/structure/{{ alignment.ncbi_id }}" target="_blank">{{ alignment.ncbi_id }}</a>
+            {% elif "emb|" in alignment.title %}
+                <a href="https://www.ebi.ac.uk/ena/data/view/{{ alignment.ncbi_id }}" target="_blank">{{ alignment.ncbi_id }}</a>
+            {% else %}
+                <a href="https://www.ncbi.nlm.nih.gov/protein/{{ alignment.ncbi_id }}" target="_blank">{{ alignment.ncbi_id }}</a>
+            {% endif %}
+          </td>
+      </tr>
+      {% endfor %}
+  </table>
+  <a href="{% url 'aplicaciones' %}"><button>Volver a Aplicaciones</button></a>
+</body>
+</html>
+

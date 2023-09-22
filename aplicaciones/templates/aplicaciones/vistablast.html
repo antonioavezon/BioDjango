@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'estilo.css' %}"> <!-- Asegúrate de incluir tu archivo CSS aquí -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    <div class="title-container">
+        <h1>Laboratorio de Microbiología Molecular y Biotecnología Ambiental</h1>
+    </div>
+
+    <div class="container-derecha">
+        <div class="app-container">
+            <h2>Blast a NCBI</h2>
+        </div>
+    </div>
+
+    <div class="app-container">
+        <form id="blast-form" action="/aplicaciones/blast" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group form-group-separated">
+                <label for="sequence">Cadena de Secuencia:</label>
+                <input type="text" id="sequence" name="sequence" style="width: 50em;" />
+            </div>
+
+            <div class="app-form-group">
+                <label for="fasta-file">Archivo FASTA:</label>
+                <input type="file" id="fasta-file" name="fasta_file" accept=".fasta" />
+            </div>
+
+            <div class="app-form-group">
+                <label>Selecciona el tipo de consulta BLAST:</label><br>
+                <label><input type="radio" name="blast_type" value="blastn" checked> BLASTN (Nucleotide vs Nucleotide)</label><br>
+                <label><input type="radio" name="blast_type" value="blastp"> BLASTP (Protein vs Protein)</label><br>
+                <label><input type="radio" name="blast_type" value="blastx"> BLASTX (Nucleotide translated to Protein vs Protein)</label><br>
+                <label><input type="radio" name="blast_type" value="tblastn"> TBLASTN (Protein vs Nucleotide translated to Protein)</label><br>
+                <label><input type="radio" name="blast_type" value="tblastx"> TBLASTX (Nucleotide translated to Protein vs Nucleotide translated to Protein)</label><br>
+            </div>
+
+            <div class="btn-group">
+                <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-arrow-right-circle"></i> Blast
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+

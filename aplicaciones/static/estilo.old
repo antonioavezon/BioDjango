@@ -1,0 +1,78 @@
+/* Estilos para .title-container */
+.title-container {
+  background-color: #00FFFF; /* Color de fondo calipso */
+  color: white; /* Letras color blanco */
+  text-align: center;
+  width: 100%; /* De lado a lado de la página */
+  font-size: 1.5em; /* 1/4 del tamaño original */
+  padding: 5px 0; /* Espaciado superior e inferior */
+}
+
+/* Estilos para .container y su imagen */
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 3cm;
+  padding-right: 3cm;
+}
+
+.container-derecha {
+  text-align: left;
+  margin-left: 2cm;
+}
+
+.nav-links {
+  text-align: right;
+  margin-right: 2cm;
+}
+
+/* Estilos para .app-container */
+.app-container {
+  text-align: left;
+  margin-left: 10cm; /* Alineado a la izquierda y 10 cm del borde izquierdo */
+  margin-top: 3cm; /* Espaciado desde la parte superior */
+}
+
+/* Estilos para .app-form-group */
+.app-form-group {
+  margin-top: 2cm; /* Espaciado desde la parte superior */
+}
+
+/* Estilos para .app-upload */
+.app-upload {
+  margin-top: 3cm; /* Espaciado desde la parte superior */
+}
+
+/* Estilos para .app-button */
+.app-button {
+  margin-top: 3cm; /* Espaciado desde la parte superior */
+}
+
+ 
+/* Espaciado para las etiquetas de form-group */
+.form-group label {
+  margin-top: 2cm; /* 2 cm de separación entre etiquetas */
+}
+
+/* Alinear botón y link en la misma línea */
+.app-button, .btn.btn-secondary {
+  display: inline-block;
+  margin: 0 3cm; /* 3 cm de cada margen */
+}
+
+/* Estilo para separar más los form-group específicos */
+.form-group-separated label {
+  margin-bottom: 2cm; /* 2 cm de separación debajo de la etiqueta */
+}
+
+/* Alinear botón y link en la misma línea */
+.app-button, .btn-group .btn {
+  display: inline-block;
+  margin: 0 3cm; /* 3 cm de cada margen */
+  margin-top: 2cm;
+}
+
+.btn-group {
+  display: inline-flex;
+  justify-content: space-between;
+}
